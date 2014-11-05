@@ -1,0 +1,12 @@
+set title "Polynomial of Degree 6" font  "Verdana, 14" 
+set xlabel "x values" font  "Verdana, 12" 
+set ylabel "Values of polynomial (y)" font  "Verdana, 12" 
+set size 1.0, 1.0
+set terminal postscript portrait enhanced mono solid "Helvetica" 14
+set output "poly02b.eps"
+set terminal pngcairo size 800, 600 enhanced
+set output "poly02b.png"
+set samples 50
+unset key
+plot "poly02b.dat" u 1:2 w linespoints lt 1 lw 2  
+

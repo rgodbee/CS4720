@@ -1,0 +1,155 @@
+Script started on Thu 11 Sep 2014 05:30:46 PM EDT
+[rgodbee1@cs3 assigment03]$ [H[J[rgodbee1@cs3 assigment03]$ ls
+09142014transcript_01.txt  basic_lib.h  [0m[01;32mcomplexNum[0m
+basic_lib.c                basic_lib.o  complexNum.c
+[m[rgodbee1@cs3 assigment03]$ ls./complexNum gcc -Wall -o complexNum complexNum.c -lm [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd assigment03[Kgcc -Wall -o complexNum complexNum.c -lm 
+[rgodbee1@cs3 assigment03]$ gcc -Wall -o complexNum complexNum.c -lm [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K./complexNum 
+Adding Two Arrays:
+Real Part	Imaginary Part
+3.100000	4.200000
+6.300000	3.500000
+Subtracting Two Arrays:
+Real Part	Imaginary Part
+-0.900000	-1.800000
+-1.700000	-2.500000
+Multipling Two Arrays:
+Real Part	Imaginary Part
+2.200000	3.600000
+9.200000	1.500000
+Dividing Two Arrays:
+Real Part	Imaginary Part
+0.550000	0.400000
+0.575000	0.166667
+[rgodbee1@cs3 assigment03]$ vi
+[?1h=[1;41r[m[m[0m[H[J[2;1H[1m~
+~
+~
+~
+~[0m[41;69H0,0-1[9CAll[15;35HVIM - Vi IMproved[17;36Hversion 7.2.411[18;32Hby Bram Moolenaar et al.[19;27HModified by [1m<bugzilla@redhat.com>[0m[20;22HVim is open source and freely distributable[22;32HSponsor Vim development![23;21Htype  :help sponsor[1m<Enter>[0m    for information[25;21Htype  :q[1m<Enter>[0m[15Cto exit[26;21Htype  :help[1m<Enter>[0m  or  [1m<F1>[0m  for on-line help[27;21Htype  :help version7[1m<Enter>[0m   for version info[1;1H[41;69H[K[41;1H:o c[1m^I[0m[41;5H[K[41;5H[41;4H[K[41;4H[41;2H[K[41;2H [67C0,0-1[9CAll[1;1H[41;69H[K[41;1H:q[?1l>[41;1H[K[41;1H[rgodbee1@cs3 assigment03]$ [H[J[rgodbee1@cs3 assigment03]$ vi complexNum.c
+[?1h=[1;41r[m[m[0m[H[J[41;1H"complexNum.c" [noeol][dos] 129L, 3771C[1;1H#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+typedef struct {[6;8H double realpart;[7;8H double imagpart;
+} ComplexNum;
+
+#define SIZE_OF_ARR 2
+
+ComplexNum** addComplexNum(ComplexNum **x, ComplexNum **y);
+ComplexNum** subtractComplexNum(ComplexNum **x, ComplexNum **y);
+ComplexNum** multiplyComplexNum(ComplexNum **x, ComplexNum **y);
+ComplexNum** divisionComplexNum(ComplexNum **x, ComplexNum **y);
+void printComplexArray(ComplexNum **x);
+
+int main()
+{[20;8H //input values[21;8H // declare arrays[22;8H ComplexNum *xComplexArray[SIZE_OF_ARR];[23;8H ComplexNum *yComplexArray[SIZE_OF_ARR];[24;8H // declare an array to hold the answer from the different opperations[25;8H ComplexNum **answerComplexArray;[26;8H int i;[27;8H for (i = 0; i < SIZE_OF_ARR; ++i)[28;8H {[29;16H xComplexArray[i] = malloc(sizeof(ComplexNum));[30;16H yComplexArray[i] = malloc(sizeof(ComplexNum));[31;8H }[33;8H // initialize arrayz[34;8H xComplexArray[0]->realpart = 1.1;[35;8H xComplexArray[0]->imagpart = 1.2;[36;8H xComplexArray[1]->realpart = 2.3;[37;8H xComplexArray[1]->imagpart = 0.5;[39;8H yComplexArray[0]->realpart = 2;[40;8H yComplexArray[0]->imagpart = 3;[41;69H1,1[11CTop[1;1H[41;69H2[2;1H[41;69H3[3;1H[41;69H4,0-1[4;1H[41;69H5,1  [5;1H[41;69H6,1-8[6;8H[41;69H7[7;8H[41;69H8,1  [8;1H[41;69H9,0-1[9;1H[41;69H10,1 [10;1H[41;70H1,0-1[11;1H[41;70H2,1  [12;1H[41;70H3[13;1H[41;70H4[14;1H[41;70H5[15;1H[41;70H6[16;1H[41;70H7,0-1[17;1H[41;70H8,1  [18;1H[41;70H9[19;1H[41;69H20,1-8[20;8H[41;70H1[21;8H[41;70H2[22;8H[41;70H3[23;8H[41;70H4[24;8H[41;70H5[25;8H[41;70H6[26;8H[41;70H7[27;8H[41;70H8[28;8H[41;70H9[29;8H[41;69H30[30;8H[41;70H1[31;8H[41;70H2[32;8H[41;70H3[33;8H[41;70H4[34;8H[41;70H5[35;8H[41;70H6[36;8H[41;70H7[37;8H[41;70H8,0-1[38;1H[41;70H9,1-8[39;8H[41;69H40[40;8H[1;40r[40;1H
+[1;41r[40;8H yComplexArray[1]->realpart = 4;[41;1H[K[41;69H41,1-8[9C1%[40;8H[1;40r[40;1H
+[1;41r[40;8H yComplexArray[1]->imagpart = 3;[41;69H[K[41;69H42,1-8[9C2%[40;8H[1;40r[40;1H
+[1;41r[41;69H[K[41;69H43,0-1[9C3%[40;1H[1;40r[40;1H
+[1;41r[40;8H // sum and print[41;69H[K[41;69H44,1-8[9C4%[40;8H[1;40r[40;1H
+[1;41r[40;8H answerComplexArray = addComplexNum(xComplexArray, yComplexArray);[41;69H[K[41;69H45,1-8[9C5%[40;8H[1;40r[40;1H
+[1;41r[40;8H printf("Adding Two Arrays:\n");[41;69H[K[41;69H46,1-8[9C6%[40;8H[1;40r[40;1H
+[1;41r[40;8H printComplexArray(answerComplexArray);[41;69H[K[41;69H47,1-8[9C7%[40;8H[1;40r[40;1H
+[1;41r[40;8H // differnce and print[41;69H[K[41;69H48,1-8[9C8%[40;8H[1;40r[40;1H
+[1;41r[40;8H answerComplexArray = subtractComplexNum(xComplexArray, yComplexArray);[41;69H[K[41;69H49,1-8[8C10%[40;8H[41;70H8[39;8H[41;70H7[38;8H[41;70H6[37;8H[41;70H5[36;8H[41;70H4[35;8H[41;70H3,0-1[34;1H[41;70H4,1-8[35;8H[41;72H2-9[35;9H[41;70H3,0-1[34;1H[41;1H[1m-- INSERT --[0m[41;69H[K[41;69H43,1[10C10%[34;1H[41;72H2-9[34;9H[35;40r[35;1HM[1;41r[41;69H[K[41;69H44,1[10C10%[35;1H[41;72H2-9[35;9H /[41;72H3-10[35;10H//[41;72H4-11[35;11H[41;72H5-12[35;12H p[41;72H6-13[35;13Hpr[41;72H7-14[35;14Hri[41;72H8-15[35;15Hin[41;72H9-16[35;16Hnt[41;72H10-17[35;17H[41;73H1-18[35;18H v[41;73H2-19[35;19Hva[41;73H3-20[35;20Hal[41;73H4-21[35;21Hlu[41;73H5-22[35;22Hus[41;73H6-23[35;23Hse[41;73H7-24[35;24Hes[41;73H8-25[35;25H[35;24H[K[41;73H7-24[35;24H[35;23H[K[41;73H6-23[35;23H[35;22H[K[41;73H5-22[35;22H[35;21H[K[41;73H4-21[35;21Hlu[41;73H5-22[35;22Hue[41;73H6-23[35;23Hes[41;73H7-24[35;24H[35;23H[K[41;73H6-23[35;23H[35;22H[K[41;73H5-22[35;22Hue[41;73H6-23[35;23Hes[41;73H7-24[35;24H[41;73H8-25[35;25H o[41;73H9-26[35;26Hof[41;72H20-27[35;27H[41;73H1-28[35;28H t[41;73H2-29[35;29Hth[41;73H3-30[35;30Hhe[41;73H4-31[35;31H[41;73H5-32[35;32H s[41;73H6-33[35;33Hst[41;73H7-34[35;34Hta[41;73H8-35[35;35Har[41;73H9-36[35;36Hrt[41;72H30-37[35;37Hti[41;73H1-38[35;38Hin[41;73H2-39[35;39Hng[41;73H3-40[35;40H[41;73H4-41[35;41H t[41;73H5-42[35;42Hte[41;73H6-43[35;43H[35;42H[K[41;73H5-42[35;42Htw[41;73H6-43[35;43Hwo[41;73H7-44[35;44H[41;73H8-45[35;45H a[41;73H9-46[35;46Har[41;72H40-47[35;47Hrr[41;73H1-48[35;48Hra[41;73H2-49[35;49Hay[41;73H3-50[35;50Hys[41;73H4-51[35;51H[36;40r[36;1HM[1;41r[36;8H //[41;69H[K[41;69H45,5-12[8C9%[36;12H[41;72H4-11[36;11H[36;10H[K[41;72H3-10[36;10H[36;9H[K[41;72H2-9 [36;9H p[41;72H3-10[36;10Hpr[41;72H4-11[36;11Hri[41;72H5-12[36;12Hin[41;72H6-13[36;13Hnt[41;72H7-14[36;14Htf[41;72H8-15[36;15Hf([41;72H9-16[36;16H("[41;72H10-17[36;17H"A[41;73H1-18[36;18HAr[41;73H2-19[36;19Hrr[41;73H3-20[36;20Hra[41;73H4-21[36;21Hay[41;73H5-22[36;22H[41;73H6-23[36;23H A[41;73H7-24[36;24HA"[41;73H8-25[36;25H")[41;73H9-26[36;26H);[41;72H20-27[36;27H[37;40r[37;1HM[1;41r[41;69H[K[41;69H46,1[11C9%[37;1H[41;72H2-9[37;9H p[41;72H3-10[37;10H[41;70H7[38;10H[41;70H8[39;10H[41;70H9[40;10H[1;40r[40;1H
+[1;41r[40;8H printComplexArray(answerComplexArray);[41;69H[K[41;69H50,3-10[7C10%[40;10H[1;40r[40;1H
+[1;41r[40;8H // differnce and print[41;69H[K[41;69H51,3-10[7C11%[40;10H[41;70H0[39;10H[41;69H49[38;10H[41;70H8[37;10H[41;70H7[36;10H[41;70H6[35;10Hpr[41;72H4-11[35;11Hri[41;72H5-12[35;12Hin[41;72H6-13[35;13Hnt[41;72H7-14[35;14HtC[41;72H8-15[35;15HCo[41;72H9-16[35;16Hom[41;72H10-17[35;17Hmp[41;73H1-18[35;18Hpl[41;73H2-19[35;19Hle[41;73H3-20[35;20Hex[41;73H4-21[35;21HxA[41;73H5-22[35;22HAr[41;73H6-23[35;23Hrr[41;73H7-24[35;24Hra[41;73H8-25[35;25Hay[41;73H9-26[35;26Hy([41;72H20-27[35;27H(x[41;73H1-28[35;28H[41;70H5,20-27[34;27H[41;72H19-26[34;26H[41;73H8-25[34;25H[41;73H7-24[34;24H ");[34;26H[K[41;73H6-23[34;23H X");[41;73H7-24[34;24H[41;70H6[35;24H[41;73H8-25[35;25H[41;73H9-26[35;26H[41;72H20-27[35;27H[41;73H1-28[35;28HxC[41;73H2-29[35;29HCo[41;73H3-30[35;30Hom[41;73H4-31[35;31Hmp[41;73H5-32[35;32Hpl[41;73H6-33[35;33Hle[41;73H7-34[35;34Hex[41;73H8-35[35;35HxA[41;73H9-36[35;36HAr[41;72H30-37[35;37Hrr[41;73H1-38[35;38Hra[41;73H2-39[35;39Hay[41;73H3-40[35;40Hy)[41;73H4-41[35;41H);[41;73H5-42[35;42H;d[41;73H6-43[35;43H[35;42H[K[41;73H5-42[35;42H[41;1H[K[35;41H[41;69H46,34-41      11%[35;41H[35;41H[K[41;73H3-40[35;40H[41;73H2-39[35;39H[41;73H3-40[35;40H[41;73H2-39[35;39H[41;73H1-38[35;38H[41;70H5,19-26[34;26H[41;70H6,31-38[35;38H[41;73H2-39[35;39H[41;73H3-40[35;40H[41;1H[1m-- INSERT --[0m[41;69H[K[41;69H46,33-40      11%[35;40H[41;73H4-41[35;41H);[41;73H5-42[35;42H[41;1H[K[35;41H[41;69H46,34-41      11%[35;41H[35;41H[K[41;73H3-40[35;40H[41;1H[1m-- INSERT --[0m[41;69H[K[41;69H46,33-40      11%[35;40H[41;73H4-41[35;41H);[41;73H5-42[35;42H[41;1H[K[35;41H[41;69H46,34-41      11%[35;41H[35;41H[K[41;73H3-40[35;40H[35;40H[K[41;73H2-39[35;39H[41;1H[1m-- INSERT --[0m[41;69H[K[41;69H46,32-39      11%[35;39Ha)y[41;73H3-40[35;40Hay[35;40H[K[41;73H2-39[35;39H[41;73H3-40[35;40Hy)[41;73H4-41[35;41H);[41;73H5-42[35;42H[41;1H[K[35;41H[41;69H46,34-41      11%[35;41H[41;1H[1m-- INSERT --[0m[41;69H[K[41;69H46,34-41      11%[35;41H[41;73H5-42[35;42H[36;40r[36;1HM[1;41r[41;69H[K[41;69H47,1[10C11%[36;1H[41;72H2-9[36;9H p[41;72H3-10[36;10Hpr[41;72H4-11[36;11Hri[41;72H5-12[36;12Hin[41;72H6-13[36;13Hnt[41;72H7-14[36;14Htf[41;72H8-15[36;15Hf([41;72H9-16[36;16H("[41;72H10-17[36;17H"A[41;73H1-18[36;18HAr[41;73H2-19[36;19Hrr[41;73H3-20[36;20Hra[41;73H4-21[36;21Hay[41;73H5-22[36;22H[41;73H6-23[36;23H Y[41;73H7-24[36;24HY"[41;73H8-25[36;25H")[41;73H9-26[36;26H);[41;72H20-27[36;27H[37;40r[37;1HM[1;41r[41;69H[K[41;69H48,1[10C11%[37;1H[41;72H2-9[37;9H p[41;72H3-10[37;10Hpr[41;72H4-11[37;11Hri[41;72H5-12[37;12Hin[41;72H6-13[37;13Hnt[41;72H7-14[37;14HtC[41;72H8-15[37;15HCo[41;72H9-16[37;16Hom[41;72H10-17[37;17Hmp[41;73H1-18[37;18Hpl[41;73H2-19[37;19Hle[41;73H3-20[37;20Het[41;73H4-21[37;21H[37;20H[K[41;73H3-20[37;20Hex[41;73H4-21[37;21HxA[41;73H5-22[37;22HAr[41;73H6-23[37;23Hrr[41;73H7-24[37;24Hra[41;73H8-25[37;25Hay[41;73H9-26[37;26Hy([41;72H20-27[37;27H(y[41;73H1-28[37;28HyC[41;73H2-29[37;29HCo[41;73H3-30[37;30Hom[41;73H4-31[37;31Hmp[41;73H5-32[37;32Hpl[41;73H6-33[37;33Hle[41;73H7-34[37;34Hex[41;73H8-35[37;35HxA[41;73H9-36[37;36HAr[41;72H30-37[37;37Hrr[41;73H1-38[37;38Hra[41;73H2-39[37;39Hay[41;73H3-40[37;40Hy)[41;73H4-41[37;41H);[41;73H5-42[37;42H[41;1H[K[37;41H[41;69H48,34-41      11%[37;41H[41;69H[K[41;1H:w"complexNum.c" [dos] 134L, 3933C written[28C48,34-41      11%[41;69H[K[41;69H48,34-41      11%[37;41H[41;1H[K[41;1H:q[?1l>[41;1H[K[41;1H[rgodbee1@cs3 assigment03]$ [H[J[rgodbee1@cs3 assigment03]$ vi complexNum.c[K./complexNum gcc -Wall -o complexNum complexNum.c -lm 
+[rgodbee1@cs3 assigment03]$ gcc -Wall -o complexNum complexNum.c -lm [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvi complexNum.c[K[K./complexNum 
+Array XReal Part	Imaginary Part
+1.100000	1.200000
+2.300000	0.500000
+Array YReal Part	Imaginary Part
+2.000000	3.000000
+4.000000	3.000000
+Adding Two Arrays:
+Real Part	Imaginary Part
+3.100000	4.200000
+6.300000	3.500000
+Subtracting Two Arrays:
+Real Part	Imaginary Part
+-0.900000	-1.800000
+-1.700000	-2.500000
+Multipling Two Arrays:
+Real Part	Imaginary Part
+2.200000	3.600000
+9.200000	1.500000
+Dividing Two Arrays:
+Real Part	Imaginary Part
+0.550000	0.400000
+0.575000	0.166667
+[rgodbee1@cs3 assigment03]$ vi c`[KomplexNum.c 
+[?1h=[1;41r[m[m[0m[H[J[41;1H"complexNum.c" [dos] 134L, 3933C[2;1H#define SIZE_OF_ARR 2
+
+ComplexNum** addComplexNum(ComplexNum **x, ComplexNum **y);
+ComplexNum** subtractComplexNum(ComplexNum **x, ComplexNum **y);
+ComplexNum** multiplyComplexNum(ComplexNum **x, ComplexNum **y);
+ComplexNum** divisionComplexNum(ComplexNum **x, ComplexNum **y);
+void printComplexArray(ComplexNum **x);
+
+int main()
+{[12;8H //input values[13;8H // declare arrays[14;8H ComplexNum *xComplexArray[SIZE_OF_ARR];[15;8H ComplexNum *yComplexArray[SIZE_OF_ARR];[16;8H // declare an array to hold the answer from the different opperations[17;8H ComplexNum **answerComplexArray;[18;8H int i;[19;8H for (i = 0; i < SIZE_OF_ARR; ++i)[20;8H {[21;16H xComplexArray[i] = malloc(sizeof(ComplexNum));[22;16H yComplexArray[i] = malloc(sizeof(ComplexNum));[23;8H }[25;8H // initialize arrayz[26;8H xComplexArray[0]->realpart = 1.1;[27;8H xComplexArray[0]->imagpart = 1.2;[28;8H xComplexArray[1]->realpart = 2.3;[29;8H xComplexArray[1]->imagpart = 0.5;[31;8H yComplexArray[0]->realpart = 2;[32;8H yComplexArray[0]->imagpart = 3;[33;8H yComplexArray[1]->realpart = 4;[34;8H yComplexArray[1]->imagpart = 3;[36;8H // print values of the starting two arrays[37;8H printf("Array X");[38;8H printComplexArray(xComplexArray);[39;8H printf("Array Y");[40;8H printComplexArray(yComplexArray);[41;69H48,2-9[9C8%[40;9H[41;70H7[39;9H[41;70H6[38;9H[41;70H5[37;9H[41;72H3-10[37;10H[41;72H4-11[37;11H[41;72H5-12[37;12H[41;72H6-13[37;13H[41;72H7-14[37;14H[41;72H8-15[37;15H[41;72H9-16[37;16H[41;72H10-17[37;17H[41;73H1-18[37;18H[41;73H2-19[37;19H[41;73H3-20[37;20H[41;73H4-21[37;21H[41;73H5-22[37;22H[41;73H6-23[37;23H[41;73H7-24[37;24H[41;73H8-25[37;25H[41;73H7-24[37;24H[41;1H[1m-- INSERT --[0m[41;13H[K[41;69H45,17-24[7C8%[37;24HX\");[41;73H8-25[37;25H\n");[41;73H9-26[37;26H[41;70H6[38;26H[41;73H8-25[38;25H[41;70H7[39;25H[41;73H7-24[39;24HY\");[41;73H8-25[39;25H\n");[41;73H9-26[39;26H[41;1H[K[39;25H[41;69H47,18-25[7C8%[39;25H[41;69H[K[41;1H:w"complexNum.c" [dos] 134L, 3937C written[28C47,18-25[7C8%[41;69H[K[41;69H47,18-25[7C8%[39;25H
+
+
+[?1l>
+[1]+  Stopped                 vim complexNum.c
+[rgodbee1@cs3 assigment03]$ vi complexNum.c ./complexNum [Kgcc -Wall -o complexNum complexNum.c -lm 
+[rgodbee1@cs3 assigment03]$ gcc -Wall -o complexNum complexNum.c -lm [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvi complexNum.c [K./complexNum [K
+Array X
+Real Part	Imaginary Part
+1.100000	1.200000
+2.300000	0.500000
+Array Y
+Real Part	Imaginary Part
+2.000000	3.000000
+4.000000	3.000000
+Adding Two Arrays:
+Real Part	Imaginary Part
+3.100000	4.200000
+6.300000	3.500000
+Subtracting Two Arrays:
+Real Part	Imaginary Part
+-0.900000	-1.800000
+-1.700000	-2.500000
+Multipling Two Arrays:
+Real Part	Imaginary Part
+2.200000	3.600000
+9.200000	1.500000
+Dividing Two Arrays:
+Real Part	Imaginary Part
+0.550000	0.400000
+0.575000	0.166667
+[rgodbee1@cs3 assigment03]$ ./complexNum [Ktouch complexNumOutput.txt
+[rgodbee1@cs3 assigment03]$ touch complexNumOutput.txt[Ktouch complexNumOutput.txt./complexNum [K| tee complexNumo[KOutput.txt 
+Array X
+Real Part	Imaginary Part
+1.100000	1.200000
+2.300000	0.500000
+Array Y
+Real Part	Imaginary Part
+2.000000	3.000000
+4.000000	3.000000
+Adding Two Arrays:
+Real Part	Imaginary Part
+3.100000	4.200000
+6.300000	3.500000
+Subtracting Two Arrays:
+Real Part	Imaginary Part
+-0.900000	-1.800000
+-1.700000	-2.500000
+Multipling Two Arrays:
+Real Part	Imaginary Part
+2.200000	3.600000
+9.200000	1.500000
+Dividing Two Arrays:
+Real Part	Imaginary Part
+0.550000	0.400000
+0.575000	0.166667
+[rgodbee1@cs3 assigment03]$ ls
+09142014transcript_01.txt  basic_lib.h  [0m[01;32mcomplexNum[0m    complexNumOutput.txt
+basic_lib.c                basic_lib.o  complexNum.c
+[m[rgodbee1@cs3 assigment03]$ exit
+There are stopped jobs.
+[rgodbee1@cs3 assigment03]$ ls
+09142014transcript_01.txt  basic_lib.h  [0m[01;32mcomplexNum[0m    complexNumOutput.txt
+basic_lib.c                basic_lib.o  complexNum.c
+[m[rgodbee1@c

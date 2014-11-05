@@ -1,0 +1,118 @@
+Script started on Fri 12 Sep 2014 04:55:37 AM EDT
+[rgodbee1@cs3 assigment03]$ ls
+09122014transcript_01.txt  basic_lib.c  basic_lib.o  complexNum.c          flights.c
+09142014transcript_01.txt  basic_lib.h  [0m[01;32mcomplexNum[0m   complexNumOutput.txt
+[m[rgodbee1@cs3 assigment03]$ gcc -Wall -o flights flights.c 
+flights.c: In function ‘create_location’:
+flights.c:25: warning: assignment makes integer from pointer without a cast
+flights.c: In function ‘insert’:
+flights.c:107: error: ‘for’ loop initial declarations are only allowed in C99 mode
+flights.c:107: note: use option -std=c99 or -std=gnu99 to compile your code
+flights.c: In function ‘remove_from_flightList’:
+flights.c:132: error: ‘NUll’ undeclared (first use in this function)
+flights.c:132: error: (Each undeclared identifier is reported only once
+flights.c:132: error: for each function it appears in.)
+flights.c:139: error: ‘for’ loop initial declarations are only allowed in C99 mode
+flights.c: In function ‘get’:
+flights.c:164: error: ‘for’ loop initial declarations are only allowed in C99 mode
+flights.c:166: warning: assignment makes pointer from integer without a cast
+flights.c: In function ‘set’:
+flights.c:179: error: ‘for’ loop initial declarations are only allowed in C99 mode
+flights.c:181: warning: assignment makes integer from pointer without a cast
+flights.c: In function ‘delete_flightList’:
+flights.c:191: error: ‘for’ loop initial declarations are only allowed in C99 mode
+[rgodbee1@cs3 assigment03]$ gcc -Wall -o flights flights.c [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kgcc -Wall -o flights flights.c 
+flights.c: In function ‘create_location’:
+flights.c:25: warning: assignment makes integer from pointer without a cast
+flights.c: In function ‘remove_from_flightList’:
+flights.c:133: error: ‘NUll’ undeclared (first use in this function)
+flights.c:133: error: (Each undeclared identifier is reported only once
+flights.c:133: error: for each function it appears in.)
+flights.c: In function ‘get’:
+flights.c:169: warning: assignment makes pointer from integer without a cast
+flights.c: In function ‘set’:
+flights.c:182: error: ‘for’ loop initial declarations are only allowed in C99 mode
+flights.c:182: note: use option -std=c99 or -std=gnu99 to compile your code
+flights.c:184: warning: assignment makes integer from pointer without a cast
+[rgodbee1@cs3 assigment03]$ [H[J[rgodbee1@cs3 assigment03]$ gcc -Wall -o flights flights.c 
+flights.c: In function ‘create_location’:
+flights.c:25: warning: assignment makes integer from pointer without a cast
+flights.c: In function ‘remove_from_flightList’:
+flights.c:133: error: ‘NUll’ undeclared (first use in this function)
+flights.c:133: error: (Each undeclared identifier is reported only once
+flights.c:133: error: for each function it appears in.)
+flights.c: In function ‘get’:
+flights.c:169: warning: assignment makes pointer from integer without a cast
+flights.c: In function ‘set’:
+flights.c:182: error: ‘for’ loop initial declarations are only allowed in C99 mode
+flights.c:182: note: use option -std=c99 or -std=gnu99 to compile your code
+flights.c:184: warning: assignment makes integer from pointer without a cast
+[rgodbee1@cs3 assigment03]$ [H[J[rgodbee1@cs3 assigment03]$ gcc -Wall -o flights flights.c 
+flights.c: In function ‘create_location’:
+flights.c:25: warning: assignment makes integer from pointer without a cast
+flights.c: In function ‘get’:
+flights.c:169: warning: assignment makes pointer from integer without a cast
+flights.c: In function ‘set’:
+flights.c:182: error: ‘for’ loop initial declarations are only allowed in C99 mode
+flights.c:182: note: use option -std=c99 or -std=gnu99 to compile your code
+flights.c:184: warning: assignment makes integer from pointer without a cast
+[rgodbee1@cs3 assigment03]$ gcc -Wall -o flights flights.c [H[J[rgodbee1@cs3 assigment03]$ gcc -Wall -o flights flights.c 
+flights.c: In function ‘create_location’:
+flights.c:25: error: request for member ‘airportCode’ in something not a structure or union
+flights.c: In function ‘get’:
+flights.c:169: error: request for member ‘airportCode’ in something not a structure or union
+flights.c: In function ‘set’:
+flights.c:185: warning: assignment makes integer from pointer without a cast
+[rgodbee1@cs3 assigment03]$ gcc -Wall -o flights flights.c 
+flights.c: In function ‘create_location’:
+flights.c:25: warning: assignment makes integer from pointer without a cast
+flights.c: In function ‘get’:
+flights.c:169: warning: assignment makes pointer from integer without a cast
+flights.c: In function ‘set’:
+flights.c:185: warning: assignment makes integer from pointer without a cast
+[rgodbee1@cs3 assigment03]$ gcc -Wall -o flights flights.c 
+flights.c: In function ‘create_location’:
+flights.c:25: warning: assignment makes integer from pointer without a cast
+flights.c: In function ‘get’:
+flights.c:169: warning: assignment makes pointer from integer without a cast
+flights.c: In function ‘set’:
+flights.c:185: warning: assignment makes integer from pointer without a cast
+flights.c: In function ‘main’:
+flights.c:208: warning: passing argument 1 of ‘create_location’ makes pointer from integer without a cast
+flights.c:22: note: expected ‘void *’ but argument is of type ‘int’
+flights.c:208: error: invalid initializer
+flights.c:209: warning: passing argument 1 of ‘create_location’ makes pointer from integer without a cast
+flights.c:22: note: expected ‘void *’ but argument is of type ‘int’
+flights.c:209: error: invalid initializer
+flights.c:210: warning: passing argument 1 of ‘create_location’ makes pointer from integer without a cast
+flights.c:22: note: expected ‘void *’ but argument is of type ‘int’
+flights.c:210: error: invalid initializer
+flights.c:211: error: invalid initializer
+flights.c:212: error: incompatible type for argument 1 of ‘prepend’
+flights.c:75: note: expected ‘struct flightList *’ but argument is of type ‘flightList’
+flights.c:212: error: incompatible type for argument 2 of ‘prepend’
+flights.c:75: note: expected ‘void *’ but argument is of type ‘location’
+flights.c:213: error: incompatible type for argument 1 of ‘append’
+flights.c:56: note: expected ‘struct flightList *’ but argument is of type ‘flightList’
+flights.c:213: error: incompatible type for argument 2 of ‘append’
+flights.c:56: note: expected ‘void *’ but argument is of type ‘location’
+flights.c:215: error: incompatible type for argument 1 of ‘remove_from_flightList’
+flights.c:122: note: expected ‘struct flightList *’ but argument is of type ‘flightList’
+flights.c:216: error: incompatible type for argument 1 of ‘append’
+flights.c:56: note: expected ‘struct flightList *’ but argument is of type ‘flightList’
+flights.c:216: error: incompatible type for argument 2 of ‘append’
+flights.c:56: note: expected ‘void *’ but argument is of type ‘location’
+flights.c:217: error: incompatible type for argument 1 of ‘size’
+flights.c:49: note: expected ‘const struct flightList *’ but argument is of type ‘flightList’
+flights.c:218:9: warning: unknown escape sequence '\d'
+flights.c:218: warning: too many arguments for format
+[rgodbee1@cs3 assigment03]$ [H[J[rgodbee1@cs3 assigment03]$ gcc -Wall -o flights flights.c 
+flights.c: In function ‘get’:
+flights.c:169: warning: assignment makes pointer from integer without a cast
+flights.c: In function ‘main’:
+flights.c:209: error: invalid initializer
+flights.c:210: error: incompatible type for argument 1 of ‘prepend’
+flights.c:75: note: expected ‘struct flightList *’ but argument is of type ‘flightList’
+flights.c:211: error: incompatible type for argument 1 of ‘append’
+flights.c:56: note: expected ‘struct flightList *’ but argument is of type ‘flightList’
+flights.c:213: error: incompatible type for a

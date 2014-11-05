@@ -1,0 +1,24 @@
+Array X
+Real Part	Imaginary Part
+1.100000	1.200000
+2.300000	0.500000
+Array Y
+Real Part	Imaginary Part
+2.000000	3.000000
+4.000000	3.000000
+Adding Two Arrays:
+Real Part	Imaginary Part
+3.100000	4.200000
+6.300000	3.500000
+Subtracting Two Arrays:
+Real Part	Imaginary Part
+-0.900000	-1.800000
+-1.700000	-2.500000
+Multipling Two Arrays:
+Real Part	Imaginary Part
+2.200000	3.600000
+9.200000	1.500000
+Dividing Two Arrays:
+Real Part	Imaginary Part
+0.550000	0.400000
+0.575000	0.166667

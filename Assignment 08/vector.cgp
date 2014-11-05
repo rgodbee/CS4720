@@ -1,0 +1,12 @@
+set title "Function: t+e^(t/2pi)*cos(2pi*t)" font  "Verdana, 14" 
+set xlabel "Time" font  "Verdana, 12" 
+set ylabel "Function Output" font  "Verdana, 12" 
+set size 1.0, 1.0
+set terminal postscript portrait enhanced mono solid "Helvetica" 14
+set output "problem1.eps"
+set terminal pngcairo size 800, 600 enhanced
+set output "problem1.png"
+set samples 50
+unset key
+plot "problem1.dat" u 2:3 w linespoints lt 1 lw 2  
+
